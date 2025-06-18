@@ -16,6 +16,7 @@ parser code {:
             cur_token.right + 1,
             cur_token.value != null ? cur_token.value : sym.terminalNames[cur_token.sym]
         );
+        throw new RuntimeException(errorMsg);
         syntaxErrors.add(errorMsg);
     }
 

@@ -166,7 +166,6 @@ Whitespace = [ \t\r\f\n]+
     return symbol(ERROR, yytext()); 
 }
 
-. {
-    addError("Caracter inesperado", yytext()); 
-    return symbol(ERROR, yytext()); 
+[^] { 
+    return new Symbol(sym.ERROR, yyline + 1, yycolumn + 1, yytext()); 
 }
